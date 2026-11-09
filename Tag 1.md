@@ -31,8 +31,20 @@
 4. **Auswerten:** Daten suchen, filtern, vergleichen und analysieren.
 5. **Löschen:** Datensätze vollständig entfernen.
 
+Hier ist die Tabelle im **Markdown-Code-Block** zum einfachen Kopieren:
 
-### 2.3 Redundanz
+### 2.3 Qualitative Vergleichstabelle
+| Tätigkeit | Unstrukturierte Daten | Wenig strukturierte Daten | Strukturierte Daten | Begründung |
+| :--- | :--- | :--- | :--- | :--- |
+| **Initialisieren** | sehr einfach | einfach | sehr schwierig | Datenbanken benötigen eine aufwendige Vorab-Modellierung und Schema-Definition. |
+| **Erfassen** | sehr einfach | einfach | mittelschwierig | Freie Texte lassen sich sofort eingeben; strukturierte Daten erfordern Formate und Validierung. |
+| **Mutieren** | sehr schwierig | mittelschwierig | einfach | Gezieltes Ändern per Schlüssel/ID vs. mühsame manuelle Suche in Freitexten. |
+| **Auswerten** | sehr schwierig | mittelschwierig | sehr einfach | Automatisierte Abfragen (SQL/Filter) vs. zeitintensive Handarbeit. |
+| **Löschen** | sehr schwierig | mittelschwierig | sehr einfach | Gezieltes Entfernen per Datenbankbefehl vs. manuelles Durchsuchen aller Dateien. |
+```
+
+
+### 2.4 Redundanz
 * **Unerwünschte Redundanz:** Mehrfaches Speichern gleicher Daten. Bei Änderungen entstehen Inkonsistenzen und die Datenintegrität wird verletzt.
 * **Erwünschte Redundanz:** Gezielte Duplizierung (z. B. Backups) zur Erhöhung der Ausfallsicherheit.
 
