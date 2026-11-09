@@ -10,86 +10,82 @@
 
 ## 1. Grundlagen: Daten, Nachricht, Information & Wissen
 
-* **Daten:** Zeichen oder Symbole ohne Kontext (z. B. `162`).
-* **Nachricht:** Übermittelte Daten mit syntaktischer Struktur (z. B. `Felix ist 162 cm gross.`).
-* **Information:** Daten, die im Empfänger-Kontext eine Bedeutung erhalten (z. B. `Felix ist grösser als 150 cm.`).
-* **Wissen:** Verknüpfung von Informationen zu einer Handlungsgrundlage (z. B. `Felix erfüllt die Mindestgrösse für die Achterbahn.`).
+* **Daten:** Einzelne Zeichen oder Zahlen ohne weiteren Zusammenhang (z. B. `162`).
+* **Nachricht:** Daten, die in einer bestimmten Form übermittelt werden (z. B. `Felix ist 162 cm gross.`).
+* **Information:** Daten, die für jemanden eine Bedeutung haben (z. B. `Felix ist grösser als 150 cm.`).
+* **Wissen:** Wenn man verschiedene Informationen miteinander verbindet und daraus etwas ableiten kann (z. B. `Felix erfüllt die Mindestgrösse für die Achterbahn.`).
 
 ---
 
 ## 2. Datenstrukturen & Datenverwaltung
 
 ### 2.1 Datenstrukturen
-* **Unstrukturierte Daten:** Keine feste Ordnung oder Formatierung (z. B. Papierzettel, freier Text). Sehr einfache Erfassung, aber extrem schwer auszuwerten.
-* **Wenig strukturierte Daten:** Leicht vorgeordnete Daten (z. B. alphabetisch sortierte Visitenkarten).
-* **Strukturierte Daten:** Vorgegebenes Datenbank. Höherer Vorab-Aufwand bei der Modellierung, dafür sehr schneller Zugriff, Abfrage und Mutation.
+* **Unstrukturierte Daten:** Haben keine feste Ordnung oder ein bestimmtes Format (z. B. Papierzettel oder freier Text). Man kann sie einfach erfassen, aber nur schwer auswerten.
+* **Wenig strukturierte Daten:** Sind bereits etwas geordnet (z. B. alphabetisch sortierte Visitenkarten).
+* **Strukturierte Daten:** Haben eine klare, vorher festgelegte Struktur, zum Beispiel in einer Datenbank. Das Einrichten braucht zuerst mehr Aufwand. Dafür kann man die Daten später schnell suchen, abfragen und ändern.
 
-### 2.2 Datenverwaltung 
-1. **Initialisieren:** Datenstruktur, Datenmodell und Formate (Text, Zahl, Datum) definieren.
+### 2.2 Datenverwaltung
+1. **Initialisieren:** Festlegen, wie die Daten aufgebaut sind und welche Formate verwendet werden (z. B. Text, Zahl oder Datum).
 2. **Erfassen:** Neue Datensätze hinzufügen.
-3. **Mutieren:** Datensätze suchen und anpassen.
+3. **Mutieren:** Vorhandene Datensätze suchen und ändern.
 4. **Auswerten:** Daten suchen, filtern, vergleichen und analysieren.
 5. **Löschen:** Datensätze vollständig entfernen.
-
-
-
 
 ### 2.3 Qualitative Vergleichstabelle
 | Tätigkeit | Unstrukturierte Daten | Wenig strukturierte Daten | Strukturierte Daten | Begründung |
 | :--- | :--- | :--- | :--- | :--- |
-| **Initialisieren** | sehr einfach | einfach | sehr schwierig | Datenbanken benötigen eine aufwendige Vorab-Modellierung und Schema-Definition. |
-| **Erfassen** | sehr einfach | einfach | mittelschwierig | Freie Texte lassen sich sofort eingeben; strukturierte Daten erfordern Formate und Validierung. |
-| **Mutieren** | sehr schwierig | mittelschwierig | einfach | Gezieltes Ändern per Schlüssel/ID vs. mühsame manuelle Suche in Freitexten. |
-| **Auswerten** | sehr schwierig | mittelschwierig | sehr einfach | Automatisierte Abfragen (SQL/Filter) vs. zeitintensive Handarbeit. |
-| **Löschen** | sehr schwierig | mittelschwierig | sehr einfach | Gezieltes Entfernen per Datenbankbefehl vs. manuelles Durchsuchen aller Dateien. |
-
+| **Initialisieren** | sehr einfach | einfach | sehr schwierig | Bei Datenbanken muss man zuerst genau festlegen, wie die Daten aufgebaut sind. |
+| **Erfassen** | sehr einfach | einfach | mittelschwierig | Freie Texte kann man sofort eingeben. Bei strukturierten Daten müssen Formate und Regeln eingehalten werden. |
+| **Mutieren** | sehr schwierig | mittelschwierig | einfach | In einer Datenbank kann man Daten gezielt über einen Schlüssel oder eine ID ändern. In freien Texten muss man sie zuerst mühsam suchen. |
+| **Auswerten** | sehr schwierig | mittelschwierig | sehr einfach | Datenbanken können Daten automatisch mit Abfragen oder Filtern auswerten. Bei freien Texten muss man vieles von Hand machen. |
+| **Löschen** | sehr schwierig | mittelschwierig | sehr einfach | In einer Datenbank kann man Datensätze gezielt löschen. Bei unstrukturierten Daten muss man die Dateien von Hand durchsuchen. |
 
 ### 2.4 Redundanz
-* **Unerwünschte Redundanz:** Mehrfaches Speichern gleicher Daten. Bei Änderungen entstehen Inkonsistenzen und die Datenintegrität wird verletzt.
-* **Erwünschte Redundanz:** Gezielte Duplizierung (z. B. Backups) zur Erhöhung der Ausfallsicherheit.
+* **Unerwünschte Redundanz:** Dieselben Daten werden mehrfach gespeichert. Wenn man sie an einer Stelle ändert und an einer anderen nicht, entstehen unterschiedliche oder falsche Daten.
+* **Erwünschte Redundanz:** Daten werden absichtlich kopiert, zum Beispiel bei Backups. So sind sie besser geschützt, falls etwas ausfällt.
 
 ---
 
 ## 3. Merkmalstypen
 
 Ein Merkmal beschreibt eine Eigenschaft einer Untersuchungseinheit:
-* **Häufbar:** Mehrere Werte gleichzeitig möglich (z. B. Sprachkenntnisse, Hobbys).
-* **Nicht häufbar:** Genau ein Wert trifft zu (z. B. Geburtsdatum).
-* **Diskret:** Abzählbare, getrennte Werte / ganze Zahlen (z. B. Anzahl Tore, Teilnehmeranzahl).
-* **Stetig:** Kontinuierlicher Messwert aus einem Stufenlosbereich (z. B. Körpergrösse, Gewicht, Zeit).
+
+* **Häufbar:** Es können mehrere Werte gleichzeitig zutreffen (z. B. Sprachkenntnisse oder Hobbys).
+* **Nicht häufbar:** Es kann genau ein Wert zutreffen (z. B. Geburtsdatum).
+* **Diskret:** Es gibt einzelne, abzählbare Werte oder ganze Zahlen (z. B. Anzahl Tore oder Teilnehmer).
+* **Stetig:** Es handelt sich um einen Messwert, der auch Zwischenwerte haben kann (z. B. Körpergrösse, Gewicht oder Zeit).
 
 <img width="908" height="234" alt="Screenshot 2026-11-09 135809" src="https://github.com/user-attachments/assets/0e6e8ce9-2a2e-4e72-a5fc-217f0c272059" />
 
-
 | Merkmalstyp | Beschreibung | Beispiele aus dem Unterricht |
 | :--- | :--- | :--- |
-| **Häufbar** | Mehrfachnennung möglich | Hobby, Berufsausbildung |
-| **Diskret** | Abzählbare Einzelwerte | Geschlecht, Teilnehmeranzahl, Haarfarbe |
-| **Stetig** | Kontinuierliche Messwerte | Gewicht, Strecke, Zeitintervall, Wasserpegel |
+| **Häufbar** | Mehrere Nennungen sind möglich | Hobby, Berufsausbildung |
+| **Diskret** | Einzelne, abzählbare Werte | Geschlecht, Teilnehmeranzahl, Haarfarbe |
+| **Stetig** | Messwerte mit möglichen Zwischenwerten | Gewicht, Strecke, Zeitintervall, Wasserpegel |
 
 ---
 
 ## 4. Skalentypen
 
-Die Skalierung legt fest, welche mathematischen Vergleiche und Berechnungen zulässig sind:
-* **Nominalskala:** Reines Kategorisieren ohne Rangfolge. Nur Gleichheit/Ungleichheit zulässig ($=, \neq$).
-* **Ordinalskala:** Rangfolge vorhanden, aber Abstände nicht exakt messbar ($<, >$).
-* **Kardinalskala (metrisch):** Exakte messbare Abstände, alle mathematischen Operationen zulässig ($+, -, \bar{x}$).
+Die Skala zeigt, welche Vergleiche und Berechnungen mit den Daten möglich sind:
+
+* **Nominalskala:** Werte werden nur in Kategorien eingeteilt. Es gibt keine Rangfolge. Man kann nur sagen, ob etwas gleich oder unterschiedlich ist ($=, \neq$).
+* **Ordinalskala:** Die Werte haben eine Reihenfolge. Wie gross die Abstände zwischen ihnen sind, kann man aber nicht genau sagen ($<, >$).
+* **Kardinalskala (metrisch):** Die Abstände zwischen den Werten sind genau messbar. Deshalb sind mathematische Berechnungen möglich ($+, -, \bar{x}$).
 
 <img width="906" height="236" alt="Screenshot 2026-11-09 141121" src="https://github.com/user-attachments/assets/1c4a9e8f-87fc-40b2-9ec8-ee0c0aa9b17b" />
 
-
 | Skalentyp | Operationen | Beispiele aus dem Unterricht |
 | :--- | :--- | :--- |
-| **Nominalskala** | Kategorien  | Geschlecht, Kontonummer, Haarfarbe, Telefonnummer |
-| **Ordinalskala** | Rangfolge  | Zufriedenheit (1–5), Militärischer Dienstrang, Präferenzrangfolge |
-| **Kardinalskala (metrisch)** | Messbar  | Zeitdauer, Streckenlänge, Gewicht, Körpergrösse |
+| **Nominalskala** | Kategorien | Geschlecht, Kontonummer, Haarfarbe, Telefonnummer |
+| **Ordinalskala** | Rangfolge | Zufriedenheit (1–5), Militärischer Dienstrang, Präferenzrangfolge |
+| **Kardinalskala (metrisch)** | Messbar | Zeitdauer, Streckenlänge, Gewicht, Körpergrösse |
 
 ---
 
 ## 5. Anwendung: Fragebogen (Aufgabe 3 – Thema: Cristiano Ronaldo)
 
-In Aufgabe 3 wurde ein Fragebogen zum Thema Cristiano Ronaldo entwickelt, um alle geforderten Merkmal- und Skalentypen korrekt abzudecken:
+In Aufgabe 3 haben wir einen Fragebogen zum Thema Cristiano Ronaldo erstellt. Dabei sollten die verschiedenen Merkmalstypen und Skalentypen vorkommen:
 
 * **Aus welchem Land kommt Ronaldo?:** Nominalskala & nicht häufbares Merkmal (Einzelauswahl).
 * **Wie viele Kinder hat Ronaldo?:** Kardinalskala & diskretes Merkmal (Ganzzahlen).
@@ -99,10 +95,9 @@ In Aufgabe 3 wurde ein Fragebogen zum Thema Cristiano Ronaldo entwickelt, um all
 
 ## 🧠 Was habe ich heute gelernt?
 
-* Ich kenne den Unterschied zwischen **Daten, Nachrichten, Informationen und Wissen** sowie deren Bedeutung in der Informatik.
-* Ich verstehe die Vor- und Nachteile von **unstrukturierten, wenig strukturierten und strukturierten Daten** bei Initialisierung, Erfassung, Mutation, Auswertung und Löschung.
-* Ich kenne den Unterschied zwischen **unerwünschter Redundanz** (Inkonsistenzgefahr) und **erwünschter Redundanz** (Ausfallsicherheit).
-* Ich kann unterscheiden, ob ein Merkmal **häufbar** oder **nicht häufbar** ist sowie ob es sich um **diskrete** oder **stetige** Daten handelt.
-* Ich kenne die drei Skalentypen (**Nominal-, Ordinal- und Kardinalskala**) und weiss, welche mathematischen Operationen jeweils zulässig sind.
-* Ich kann einen strukturierten Fragebogen so aufbauen, dass alle geforderten Merkmal- und Skalentypen gezielt abgedeckt werden.
-
+* Ich kenne den Unterschied zwischen **Daten, Nachrichten, Informationen und Wissen** und weiss, was sie in der Informatik bedeuten.
+* Ich verstehe die Vor- und Nachteile von **unstrukturierten, wenig strukturierten und strukturierten Daten** beim Einrichten, Erfassen, Ändern, Auswerten und Löschen.
+* Ich kann **unerwünschte Redundanz** (wenn Daten widersprüchlich werden können) von **erwünschter Redundanz** (z. B. Backups) unterscheiden.
+* Ich kann erkennen, ob ein Merkmal **häufbar** oder **nicht häufbar** ist und ob die Daten **diskret** oder **stetig** sind.
+* Ich kenne die drei Skalentypen (**Nominal-, Ordinal- und Kardinalskala**) und weiss, welche mathematischen Operationen damit möglich sind.
+* Ich kann einen Fragebogen so aufbauen, dass die geforderten Merkmalstypen und Skalentypen vorkommen.
