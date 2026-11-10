@@ -69,9 +69,9 @@ Ein Merkmal beschreibt eine Eigenschaft einer Untersuchungseinheit:
 
 Die Skala zeigt, welche Vergleiche und Berechnungen mit den Daten möglich sind:
 
-* **Nominalskala:** Werte werden nur in Kategorien eingeteilt. Es gibt keine Rangfolge. Man kann nur sagen, ob etwas gleich oder unterschiedlich ist ($=, \neq$).
+* **Nominalskala:** Werte werden nur in Kategorien eingeteilt. Es gibt keine Rangfolge. Man kann nur sagen, ob etwas gleich oder unterschiedlich ist ($=, \\neq$).
 * **Ordinalskala:** Die Werte haben eine Reihenfolge. Wie gross die Abstände zwischen ihnen sind, kann man aber nicht genau sagen ($<, >$).
-* **Kardinalskala (metrisch):** Die Abstände zwischen den Werten sind genau messbar. Deshalb sind mathematische Berechnungen möglich ($+, -, \bar{x}$).
+* **Kardinalskala (metrisch):** Die Abstände zwischen den Werten sind genau messbar. Deshalb sind mathematische Berechnungen möglich ($+, -, \\bar{x}$).
 
 <img width="906" height="236" alt="Screenshot 2026-11-09 141121" src="https://github.com/user-attachments/assets/1c4a9e8f-87fc-40b2-9ec8-ee0c0aa9b17b" />
 
@@ -90,6 +90,40 @@ In Aufgabe 3 haben wir einen Fragebogen zum Thema Cristiano Ronaldo erstellt. Da
 * **Aus welchem Land kommt Ronaldo?:** Nominalskala & nicht häufbares Merkmal (Einzelauswahl).
 * **Wie viele Kinder hat Ronaldo?:** Kardinalskala & diskretes Merkmal (Ganzzahlen).
 * **Wie schwer ist Ronaldo?:** Kardinalskala & stetiges Merkmal (Messwerte mit Kommas).
+
+---
+
+## 6. Abschlussaufgabe: Suchmaschinen
+
+### 6.1 Wie findet Google so schnell Webseiten?
+
+HTML besteht zwar aus Text, hat aber eine klare Struktur:
+
+* **Titel:** Zeigt, worum es auf der Seite geht.
+* **Überschriften:** Teilen den Inhalt auf.
+* **Absätze:** Enthalten den Text.
+* **Links:** Verbinden Webseiten.
+
+Google nutzt sogenannte Crawler, um Webseiten zu durchsuchen. Die Informationen werden in einem Suchindex gespeichert. So findet Google bei einer Suche schnell passende Ergebnisse.
+
+### 6.2 Vergleich der Suchmaschinen
+
+| Suchmaschine | Besonderheit |
+| :--- | :--- |
+| **Google** | Eigener Suchindex und eigene Sortierung der Ergebnisse. |
+| **Bing** | Suchmaschine von Microsoft mit eigenem Suchindex. |
+| **DuckDuckGo** | Legt viel Wert auf Datenschutz und verwendet unter anderem Suchergebnisse von Bing. |
+
+### 6.3 Woher kommen die Unterschiede?
+
+Die Suchmaschinen zeigen nicht immer dieselben Ergebnisse. Das liegt daran, dass sie:
+
+* unterschiedliche Daten sammeln,
+* eigene Regeln zum Sortieren verwenden,
+* Webseiten unterschiedlich bewerten,
+* Standort und Sprache berücksichtigen.
+
+**Fazit:** Obwohl man überall denselben Begriff eingibt, können unterschiedliche Ergebnisse erscheinen, weil jede Suchmaschine anders arbeitet.
 
 ---
 
