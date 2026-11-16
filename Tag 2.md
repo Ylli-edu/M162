@@ -191,3 +191,12 @@ Der Prozessor im Computer arbeitet digital und versteht eigentlich nur **0 und 1
 8. **UTF-8 Bitcode für `®` (`U+00AE`):**
    * Hex: `0xC2 0xAE`
    * Binär: **`11000010 10101110`**
+
+## Was habe ich heute gelernt?
+
+Heute habe ich verstanden, wie der Computer im Hintergrund überhaupt Daten speichert – nämlich nur als `0` und `1` (Binär). Damit wir Menschen uns keine ewig langen Bit-Ketten merken müssen, nutzt man Hexadezimal als praktische Abkürzung (4 Bits = 1 HEX-Zeichen).
+
+Ausserdem weiss ich jetzt:
+* **Unsigned vs. Signed:** Ohne Vorzeichen sind alle Zahlen positiv, mit Vorzeichen bestimmt das erste Bit ganz links, ob die Zahl ins Minus geht (Zweierkomplement).
+* **Datentypen:** Je nachdem, was man speichern will (nur ganze Zahlen, Kommazahlen, Ja/Nein oder Text), muss man den passenden Datentyp wählen, damit der Speicher nicht unnötig verschwendet wird.
+* **Textcodierung:** Der alte 7-Bit-ASCII-Code reicht nur für englische Zeichen. Für Umlaute, Emojis und andere Sprachen braucht es Unicode – und heute ist **UTF-8** der Standard im Web, weil es speichersparend und abwärtskompatibel zu ASCII ist.
