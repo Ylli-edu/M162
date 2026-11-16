@@ -173,28 +173,33 @@ Für die Zahlen 1 bis 7 reichen 3 Bit. Ein 4-Byte-Integer ist dafür ziemlich gr
 
 ## 6. Zeichencodierung
 
-Zeichencodierungen legen fest, welche Zahlen für welche Zeichen stehen.
 
-- **ASCII** kann 128 Zeichen darstellen. Umlaute und viele andere Zeichen fehlen.
-- **ISO-8859-1** kann 256 Zeichen darstellen und enthält zum Beispiel deutsche Umlaute. Es kann aber nicht alle Zeichen darstellen.
-- **Unicode** hat Codes für Zeichen aus vielen Sprachen. Zum Beispiel ist `ß` der Code `U+00DF` und `€` ist `U+20AC`.
+## Aufgabe 1: HTML-Datei (`Char1.html`)
+* **Anzeige:** Überschrift „Zeichencodierung 1“ und der Satz darunter.
+* **Umlaute:** Nein, sie sind kaputt (`MÃ¼ller wohnt in ZÃ¼rich.`).
+* **Beobachtung:** Die Datei wurde als UTF-8 gespeichert, im Code steht aber `<meta charset="ISO-8859-1">`. Der Browser liest das 2-Byte-`ü` deshalb fälschlicherweise als zwei einzelne Zeichen (`Ã` und `¼`).
 
-### UTF-8 und UTF-16
+## Aufgabe 2: Vergleich zweier HTML-Dateien (`Char2.html`)
+* **Anzeige:** „Zeichencodierung 2“ und `Müller wohnt in Zürich.` – komplett fehlerfrei.
+* **Unterschied im Code:** In `Char2.html` steht `<meta charset="UTF-8">` statt `ISO-8859-1`.
+* **Erkenntnis:** Dateicodierung und die `charset`-Angabe im Code müssen zusammenpassen, sonst gibt es Zeichensalat.
 
-- **UTF-8** braucht je nach Zeichen 1 bis 4 Byte. Englische Buchstaben brauchen 1 Byte. Umlaute brauchen meistens 2 Byte, `€` braucht 3 Byte. UTF-8 ist mit ASCII kompatibel.
-- **UTF-16** braucht meistens 2 Byte pro Zeichen. Seltene Zeichen, zum Beispiel manche Emojis, brauchen 4 Byte.
-- Bei UTF-16 gibt es Big Endian und Little Endian. Das beschreibt, in welcher Reihenfolge die Bytes gespeichert werden.
+## Aufgabe 3: CSV-Datei (`char3.csv`)
+* **Anzeige:** Tabelle in Excel, aber die Umlaute werden falsch dargestellt (z. B. `Ã¼`, `Ã¤`, `Ã¶`).
+* **Betroffene Zeichen:** Alle Umlaute (`ä`, `ö`, `ü`) und Sonderzeichen.
+* **Ursache:** Eine CSV-Datei speichert keine Info zur Codierung mit. Excel öffnet sie per Doppelklick standardmässig mit Windows-ANSI / ISO-8859-1 statt UTF-8.
 
-### Beispiel: `€URO`
+## Aufgabe 4: JSON-Datei (`char4.json`)
+* **Anzeige:** Die JSON-Datenstruktur mit `"Zürich"`, `"Müller"` und `"Männedorf"`.
+* **Umlaute:** Ja, alle Umlaute werden sauber angezeigt.
+* **Was ist JSON?** JSON (*JavaScript Object Notation*) ist ein Textformat zum strukturierten Datenaustausch (z. B. zwischen Webseiten und Servern). Der Standard nutzt immer UTF-8, weshalb der Browser es direkt richtig anzeigt.
 
-| Codierung | Bytes | Anzahl |
-| --- | --- | ---: |
-| Windows-1252 | `80 55 52 4F` | 4 Byte |
-| UTF-8 | `E2 82 AC 55 52 4F` | 6 Byte |
-| UTF-16-BE mit BOM | `FE FF 20 AC 00 55 00 52 00 4F` | 10 Byte |
-| UTF-16-LE mit BOM | `FF FE AC 20 55 00 52 00 4F 00` | 10 Byte |
+---
 
-Die Bytes `80` für das Euro-Zeichen gelten hier für **Windows-1252**, nicht für ASCII.
+## Abschluss: Warum muss ein Programm die richtige Zeichencodierung kennen?
+Weil ein Computer intern nur `0` und `1` (Bytes) speichert. Die Zeichencodierung ist das „Wörterbuch“, das übersetzt, welche Bytes welchen Buchstaben ergeben.
+
+**Beispiel:** In `Char1.html` braucht ein UTF-8-`ü` zwei Bytes. Weil im Code aber `ISO-8859-1` steht, schlägt der Browser im falschen Wörterbuch nach und macht daraus zwei kaputte Zeichen (`Ã¼`) statt einem `ü`.
 
 ---
 
