@@ -1,5 +1,5 @@
 # Modul 162: Daten analysieren und modellieren
-## Lernjournal – Tag 2: Datentypen, Zahlensysteme & Zeichencodierung (Komplett)
+## Lernjournal – Tag 2: Datentypen, Zahlensysteme & Zeichencodierung
 
 * **Autor:** Ylli Uka
 * **Datum:** 09.11.2026
