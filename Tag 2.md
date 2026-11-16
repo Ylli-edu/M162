@@ -1,103 +1,126 @@
 # Modul 162: Daten analysieren und modellieren
 
-## Lernjournal – Tag 2: Datentypen, Zahlensysteme & Zahlenumwandlung (Teil 1)
+## Lernjournal – Tag 2: Datentypen und Zahlensysteme
 
 * **Autor:** Ylli Uka
 * **Datum:** 09.11.2026
 * **Modul:** M162 – Daten analysieren und modellieren
 
-## 1. Digitale Datenverarbeitung & Dateiinterpretation
+## 1. Wie liest ein Computer Dateien?
 
-Der Mikroprozessor im PC arbeitet rein digital und kennt auf Hardwareebene nur zwei Zustände: $0$ und $1$ (Bits). Ob eine Folge von Nullen und Einsen als Textdokument (`.docx`), Musikdatei (`.mp3`) oder Bild (`.jpg`) dargestellt wird, entscheidet nicht die Hardware, sondern die **Software** (Betriebssystem und Anwendungsprogramme) anhand der **Dateiendung** sowie der **Header-Informationen (Magic Bytes)** innerhalb der Datei.
+Ein Computer arbeitet mit Bits. Ein Bit kann entweder `0` oder `1` sein. Aus vielen Bits bestehen alle Daten auf dem Computer – zum Beispiel Bilder, Musik und Texte.
 
-### Experiment: Dateiendung ändern (`Matterhorn.jpg` $\rightarrow$ `Matterhorn.txt`)
+Die Bits allein sagen aber nicht, ob es ein Bild oder ein Text ist. Ein Programm muss wissen, wie es die Daten lesen soll. Dafür sind unter anderem das Dateiformat und das verwendete Programm wichtig.
 
-1. **Doppelklick auf `Matterhorn.jpg`:** Das Betriebssystem erkennt die Endung `.jpg` und öffnet die Datei mit der Standard-Fotoanzeige-App. Die Binärdaten werden als Pixel/Farbwerte interpretiert und als Bild des Matterhorns angezeigt.
-2. **Umbenennen in `Matterhorn.txt` & Doppelklick:** Das Betriebssystem öffnet die Datei nun mit einem Texteditor (z. B. Notepad). Der Editor versucht, die identischen Binärdaten als Zeichencodes (z. B. ASCII/UTF-8) zu interpretieren. Das Ergebnis ist unleserlicher Zeichensalat („Mojibake“), da Bildkompressionsdaten keine sinnvollen Textzeichen ergeben.
-3. **Wer entscheidet über die Interpretation?** Das **Betriebssystem** weist anhand der Dateiendung das zuständige Programm zu, und das jeweilige **Anwendungsprogramm (Parser)** entscheidet, nach welchem Regelwerk (Dateiformat-Spezifikation) die Bits und Bytes interpretiert werden.
+### Experiment: Eine Bilddatei umbenennen
 
-## 2. Wichtige Zahlensysteme in der Informatik
+Ich ändere den Namen der Datei `Matterhorn.jpg` zu `Matterhorn.txt`.
 
-Um Missverständnisse zwischen verschiedenen Zahlensystemen zu vermeiden, wird die Basis oft als tiefgestellter Buchstabe (Index) oder Präfix angegeben:
+1. **Die Datei heisst `Matterhorn.jpg`:** Beim Öffnen startet normalerweise ein Bildprogramm. Es liest die Daten als Bild und zeigt Farben und Pixel an.
+2. **Die Datei heisst `Matterhorn.txt`:** Beim Öffnen startet normalerweise ein Texteditor. Er versucht, die Daten als Text zu lesen. Weil es eigentlich ein Bild ist, erscheinen oft unlesbare Zeichen.
+3. **Was passiert dabei?** Das Betriebssystem wählt anhand der Dateiendung meistens ein Programm aus. Das Programm liest und interpretiert die Daten. Wenn ich nur den Dateinamen ändere, wird der Inhalt der Datei nicht automatisch umgewandelt.
 
-| System | Bezeichnung | Basis | Zeichenvorrat | Beispiel & Notation | Bemerkung | 
-| ----- | ----- | ----- | ----- | ----- | ----- | 
-| **BIN** | Binärsystem / Dualsystem | $2$ | `0, 1` | $0110'1011_B$ | Arbeitssprache des Mikroprozessors. $4\text{ Bit}$ entsprechen genau einer HEX-Ziffer ($1111_B = \text{F}_H$). | 
-| **DEZ** | Dezimalsystem / Zehnersystem | $10$ | `0–9` | $2025_D$ | Unser gewohntes Alltagssystem. | 
-| **HEX** | Hexadezimalsystem | $16$ | `0–9`, `A–F` | $\text{FF3C}_H$ oder `0xFF3C` | Platzsparende Darstellung von Bitkombinationen (z. B. MAC-, IPv6- oder Speicheradressen). $\text{A}=10_D \dots \text{F}=15_D$. | 
+## 2. Zahlensysteme
 
-## 3. Aufgaben zu Zahlenumwandlung (Unsigned)
+In der Informatik begegnen mir vor allem drei Zahlensysteme:
 
-*Hinweis: „Unsigned“ (vorzeichenlos) bedeutet, dass alle Bits zur Darstellung positiver ganzer Zahlen (inklusive $0$) genutzt werden.*
+| System | Basis | Verwendete Zeichen | Beispiel | Einfach erklärt |
+| --- | ---: | --- | --- | --- |
+| **Binär (BIN)** | 2 | `0` und `1` | `0110'1011₂` | Computer arbeiten intern mit Bits. |
+| **Dezimal (DEZ)** | 10 | `0` bis `9` | `2025₁₀` | Das ist das Zahlensystem, das wir im Alltag verwenden. |
+| **Hexadezimal (HEX)** | 16 | `0` bis `9` und `A` bis `F` | `FF3C₁₆` oder `0xFF3C` | Damit kann man Binärzahlen kürzer aufschreiben. |
 
-1. **Wandle die Dezimalzahl $27$ in sein binäres „Unsigned“-Äquivalent um.**
-   * **Rechenweg:** Zerlegung in Zweierpotenzen: $27 = 16 + 8 + 2 + 1 = 1 \cdot 2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0$
-   * **Lösung:** $11011_B$ (als 8-Bit-Byte: $0001'1011_B$)
+Bei Hexadezimalzahlen stehen die Buchstaben für Zahlen: `A = 10`, `B = 11`, `C = 12`, `D = 13`, `E = 14` und `F = 15`.
 
-2. **Welchem Dezimalwert entspricht unsigned $1001'0011_B$?**
-   * **Rechenweg:** Addition der Stellenwerte von links ($2^7$) nach rechts ($2^0$):
-     $$1 \cdot 128 + 0 \cdot 64 + 0 \cdot 32 + 1 \cdot 16 + 0 \cdot 8 + 0 \cdot 4 + 1 \cdot 2 + 1 \cdot 1 = 128 + 16 + 2 + 1$$
-   * **Lösung:** $147_D$
+Eine Hexadezimalziffer entspricht genau vier Bits. Zum Beispiel ist `1111₂` gleich `F₁₆`.
 
-3. **Welchem hexadezimalen Wert entspricht unsigned $1011'0111_B$?**
-   * **Rechenweg:** Aufteilung in zwei 4-Bit-Blöcke (Nibbles):
-     * Linkes Nibble: $1011_B = 8 + 2 + 1 = 11_D = \text{B}_H$
-     * Rechtes Nibble: $0111_B = 4 + 2 + 1 = 7_D = 7_H$
-   * **Lösung:** $\text{B7}_H$ (bzw. `0xB7`)
+## 3. Zahlen umwandeln: Unsigned
 
-4. **Das letzte Oktett einer IP-Adresse lautet in Hexadezimal $\text{3D}$. Welchem Binärwert entspricht dies?**
-   * **Rechenweg:** Jede HEX-Ziffer einzeln in $4\text{ Bit}$ umwandeln:
-     * $3_H = 3_D = 0011_B$
-     * $\text{D}_H = 13_D = 8 + 4 + 1 = 1101_B$
-   * **Lösung:** $0011'1101_B$ (ohne führende Nullen: $111101_B$)
+**Unsigned** bedeutet «ohne Vorzeichen». Die Zahl kann also nicht negativ sein. Alle Bits werden verwendet, um den Zahlenwert darzustellen.
 
-## 4. Von „Unsigned“ zu „Signed“ (Vorzeichenbehaftete Zahlen)
+### Aufgabe 1: Dezimalzahl 27 in Binär umwandeln
 
-* **Unsigned (Natürliche Zahlen inkl. $0$):** Vergleichbar mit der **Kelvin-Skala** (beginnt beim absoluten Nullpunkt $0\text{ K}$, keine negativen Werte).
-* **Signed (Ganze Zahlen):** Vergleichbar mit der **Celsius-Skala** (besitzt positive und negative Werte, z. B. $-273\,^\circ\text{C}$ bis $+100\,^\circ\text{C}$).
+Ich zerlege 27 in Zweierpotenzen:
 
-In der Informatik wird für negative Ganzzahlen das **Zweierkomplement** verwendet. Dabei erhält das höchstwertige Bit ganz links (MSB – *Most Significant Bit*) eine **negative Wertigkeit**:
+`27 = 16 + 8 + 2 + 1`
 
-| Darstellung (4-Bit Beispiel) | Binärstelle $3$ | Binärstelle $2$ | Binärstelle $1$ | Binärstelle $0$ | Beispiel `1011` | 
-| ----- | ----- | ----- | ----- | ----- | ----- | 
-| **Unsigned** (Wertigkeit) | $+8$ | $+4$ | $+2$ | $+1$ | $8 + 0 + 2 + 1 = \mathbf{11_D}$ | 
-| **Signed** (Wertigkeit) | $-8$ | $+4$ | $+2$ | $+1$ | $-8 + 0 + 2 + 1 = \mathbf{-5_D}$ | 
+Die passenden Bits dazu sind `11011₂`.
 
-### Aufgaben zu Zahlenumwandlung (Signed)
+**Lösung:** `11011₂` oder als 8-Bit-Zahl `0001'1011₂`.
 
-1. **Wandle die Dezimalzahl $27$ in sein binäres 8-Bit-„Signed“-Äquivalent um.**
-   * **Rechenweg:** Da $+27$ positiv ist, ist das Vorzeichenbit (ganz links) $0$. Die Darstellung entspricht der Unsigned-Variante:
-     $$0 \cdot (-128) + 0 \cdot 64 + 0 \cdot 32 + 1 \cdot 16 + 1 \cdot 8 + 0 \cdot 4 + 1 \cdot 2 + 1 \cdot 1 = 27_D$$
-   * **Lösung:** $0001'1011_B$
+### Aufgabe 2: Binärzahl `1001'0011₂` in Dezimal umwandeln
 
-2. **Welchem Dezimalwert entspricht signed $1001'0011_B$?**
-   * **Rechenweg:** Das MSB (ganz links) ist $1$, somit hat diese Stelle den Wert $-128$:
-     $$1 \cdot (-128) + 0 \cdot 64 + 0 \cdot 32 + 1 \cdot 16 + 0 \cdot 8 + 0 \cdot 4 + 1 \cdot 2 + 1 \cdot 1 = -128 + 16 + 2 + 1 = -128 + 19$$
-   * **Lösung:** $-109_D$
+Jede Stelle hat einen bestimmten Wert. Von rechts nach links sind das bei 8 Bit `1, 2, 4, 8, 16, 32, 64, 128`.
 
-## 5. Übersicht der Datentypen
+Bei `1001'0011₂` addiere ich die Werte der Stellen, an denen eine `1` steht:
 
-Beim Erstellen einer Variable in einem Programm, einer Tabellenkalkulation oder einer Datenbank muss der passende Datentyp festgelegt werden. Man unterscheidet zwischen **numerischen** und **alphanumerischen** Codes:
+`128 + 16 + 2 + 1 = 147`
 
-### Einfache numerische Datentypen
+**Lösung:** `147₁₀`.
 
-* **`INTEGER` (`signed int`):** Ganze Zahlen mit Vorzeichen (z. B. `... -2, -1, 0, 1, 2 ...`).
-  * *Hinweis zu Java:* `int` = $32\text{ Bit}$; `long` = $64\text{ Bit}$.
-* **`INTEGER` (`unsigned int`):** Ganze positive Zahlen ohne Vorzeichen (z. B. `0, 1, 2 ...`).
-* **`FLOAT` (`float`):** Fliesskommazahlen (z. B. `-2.1426`, $+0.1393 \cdot 10^{+3}$, $-0.725 \cdot 10^{-3}$).
-  * **Normalisiertes Float-Format (IEEE 754, 32 Bit):** $x = v \cdot m \cdot b^e$
-    * $v = 1\text{ Bit}$ Vorzeichen
-    * $m = 23\text{ Bit}$ Mantisse
-    * $b = \text{Basis } 2$
-    * $e = 8\text{ Bit}$ Exponent
-  * *Hinweis zu Java:* `float` = $32\text{ Bit}$; `double` = $64\text{ Bit}$.
-* **`BOOLEAN` (`boolean`):** Logischer Datentyp für Wahrheitswerte (`true` / `false`).
+### Aufgabe 3: Binärzahl `1011'0111₂` in Hexadezimal umwandeln
 
-### Einfache alphanumerische Datentypen
+Ich teile die Binärzahl in zwei Gruppen mit je vier Bits:
 
-* **`CHARACTER` (`char`):** Einzelnes Textzeichen bzw. alphanumerisches Zeichen (z. B. `'A'`, `'b'`, `'0'`, `'?'`, `'+'`).
-* *(Weitere Typen wie Aufzählungstypen/Enums oder Pointer sind im Modul 162 nicht relevant.)*
+* `1011₂` ist `B₁₆`.
+* `0111₂` ist `7₁₆`.
 
-### Zusammengesetzte Datentypen
+**Lösung:** `B7₁₆` oder `0xB7`.
 
-* **`STRING` / `VARCHAR` (`ARRAY OF CHARACTER`):** Zeichenkette / Textzeile aus mehreren aneinandergereihten Characters (z. B. `"Hello World!"`).
+### Aufgabe 4: Hexadezimalzahl `3D₁₆` in Binär umwandeln
+
+Ich wandle jede Hexadezimalziffer in vier Bits um:
+
+* `3₁₆` wird zu `0011₂`.
+* `D₁₆` wird zu `1101₂`.
+
+**Lösung:** `0011'1101₂`.
+
+## 4. Zahlen mit Vorzeichen: Signed
+
+**Signed** bedeutet, dass eine Zahl positiv, negativ oder null sein kann. Dafür wird häufig das Zweierkomplement verwendet.
+
+Bei einer 8-Bit-Zahl hat das linke Bit eine besondere Bedeutung. Ist es `0`, ist die Zahl normalerweise positiv oder null. Ist es `1`, ist die Zahl negativ.
+
+Zum Beispiel kann dieselbe 4-Bit-Folge je nach Interpretation einen anderen Wert haben:
+
+| Binärzahl | Als Unsigned | Als Signed (Zweierkomplement) |
+| --- | ---: | ---: |
+| `1011₂` | 11 | -5 |
+
+### Aufgabe 1: Dezimalzahl 27 als 8-Bit-Signed-Zahl
+
+27 ist positiv, darum beginnt die Binärzahl mit `0`. Die Binärdarstellung ist dieselbe wie bei Unsigned, nur mit acht Bits aufgeschrieben.
+
+**Lösung:** `0001'1011₂`.
+
+### Aufgabe 2: Binärzahl `1001'0011₂` als Signed-Zahl
+
+Das linke Bit ist `1`, darum ist die Zahl im 8-Bit-Zweierkomplement negativ. Ich rechne mit den Stellenwerten:
+
+`-128 + 16 + 2 + 1 = -109`
+
+**Lösung:** `-109₁₀`.
+
+## 5. Datentypen
+
+Ein Datentyp sagt einem Programm, welche Art von Wert in einer Variable gespeichert wird. Zum Beispiel eine ganze Zahl, einen Text oder einen Wahrheitswert.
+
+### Zahlen und Wahrheitswerte
+
+* **`INTEGER` / `int`:** Ganze Zahlen, zum Beispiel `-2`, `0` oder `15`.
+  * In Java ist ein `int` 32 Bit gross. Ein `long` ist 64 Bit gross.
+* **Unsigned Integer:** Ganze Zahlen ohne negative Werte, zum Beispiel `0`, `1` oder `15`. Nicht jede Programmiersprache unterstützt diesen Datentyp gleich.
+* **`FLOAT` / `float`:** Zahlen mit Nachkommastellen, zum Beispiel `3.14` oder `-0.5`.
+  * Ein `float` hat normalerweise 32 Bit. Davon sind 1 Bit für das Vorzeichen, 8 Bit für den Exponenten und 23 Bit für die Nachkommastellen der Binärdarstellung reserviert.
+  * In Java ist `float` 32 Bit und `double` 64 Bit gross.
+* **`BOOLEAN` / `boolean`:** Ein Wahrheitswert. Er ist entweder `true` (wahr) oder `false` (falsch).
+
+### Zeichen und Texte
+
+* **`CHARACTER` / `char`:** Ein einzelnes Zeichen, zum Beispiel `'A'`, `'7'` oder `'?'`.
+* **`STRING` / `VARCHAR`:** Mehrere Zeichen zusammen, also ein Text. Zum Beispiel `"Hallo Welt!"`.
+
+## Mein Fazit
+
+Heute habe ich gelernt, dass Computer Daten intern als Bits speichern. Je nachdem, wie ein Programm die Bits liest, können sie zum Beispiel ein Bild, Text oder eine Zahl darstellen. Ausserdem weiss ich jetzt, wie man zwischen Binär-, Dezimal- und Hexadezimalzahlen umwandelt und wofür verschiedene Datentypen gebraucht werden.
