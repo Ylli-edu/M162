@@ -4,10 +4,9 @@
 * **Autor:** Ylli Uka
 * **Datum:** 23.11.2026
 * **Modul:** M162
+---
 
-
-## 8 Aufgaben zu Unicode
-
+### 8 Aufgaben zu Unicode
 ### 1. Wo wird UTF-8 eingesetzt, wo UTF-16?
 - **UTF-8:** Webseiten, Internet, E-Mails und Linux-Systeme.
 - **UTF-16:** Windows-Systeme und Programmiersprachen wie Java.
@@ -48,3 +47,4 @@ Der Violinschlüssel hat den Unicode `1D11E` und benötigt 4 Bytes in UTF-16. Au
 - Unicode: `U+00AE`
 - UTF-8 (Hex): `C2 AE`
 - UTF-8 (Binär): `11000010 10101110`
+---
