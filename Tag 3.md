@@ -1,8 +1,8 @@
 # Modul 162: Daten analysieren und modellieren
-## Lernjournal – Tag 2: Datentypen und Zeichencodierung
+## Lernjournal – Tag 3: Datentypen und Zeichencodierung
 
 * **Autor:** Ylli Uka
-* **Datum:** 09.11.2026
+* **Datum:** 23.11.2026
 * **Modul:** M162
 
 
