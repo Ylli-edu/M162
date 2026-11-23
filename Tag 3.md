@@ -34,11 +34,11 @@ UTF-8 benötigt bei englischen Texten wenig Speicher. UTF-16 benötigt bei norma
 Wenn ein Zeichen ausserhalb der Basic Multilingual Plane (BMP) liegt, z. B. bei vielen Emojis. Dafür werden zwei UTF-16-Codeeinheiten verwendet.
 
 ### 6. Wie können Sie in Word ein Zeichen eingeben, dessen Unicode Sie kennen?
-Den Unicode als Hexadezimalzahl eingeben und danach **Alt + X** drücken.
+Den Unicode als Hexadezimalzahl eingeben und danach **Alt + C** drücken.
 
 Beispiel:
 - Eurozeichen: `20AC`
-- Danach Alt + X drücken → €
+- Danach Alt + C drücken → €
 
 ### 7. Was ist das Problem beim Violinschlüssel?
 Der Violinschlüssel hat den Unicode `1D11E` und benötigt 4 Bytes in UTF-16. Ausserdem muss die verwendete Schriftart das Musikzeichen unterstützen.
