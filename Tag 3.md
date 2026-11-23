@@ -105,3 +105,32 @@ Der Violinschlüssel hat den Unicode `1D11E` und benötigt 4 Bytes in UTF-16. Au
 - Das Element, das zuerst hineinkommt, wird auch zuerst entfernt.
 - Beispiel: Warteschlange an der Kasse.
 - Vorteil: Daten werden in der richtigen Reihenfolge verarbeitet.
+
+
+### 9. HTML, JavaScript und JSON
+
+**HTML**
+- HTML ist die Grundstruktur einer Webseite.
+- HTML-Dateien haben die Endung `.html` und werden im Browser angezeigt.
+- Mit dem `<script>`-Tag kann JavaScript direkt in HTML eingebunden werden.
+
+**JSON in HTML verwenden**
+- JSON-Daten können in JavaScript gespeichert und verarbeitet werden.
+- Mit `console.log()` können Daten in der Browser-Konsole angezeigt werden.
+- Mit `document.write()` können Daten direkt auf der Webseite ausgegeben werden.
+- Mit `[0]` greift man auf das erste Element eines Arrays zu.
+- Mit `.name` kann man auf einen bestimmten Wert eines Objekts zugreifen.
+- JSON direkt in HTML eingebunden nennt man auch Embedded JSON oder Inline JSON.
+
+**Fetch-API**
+- Mit der Fetch-API können Daten von externen Quellen abgerufen werden.
+- Beispiel: Wetterdaten von OpenWeatherMap.
+- Die API liefert die Daten im JSON-Format zurück.
+- Mit `response.json()` werden die empfangenen Daten als JSON verarbeitet.
+- Anschliessend können einzelne Werte wie Temperatur, Wetterbeschreibung oder Stadtname ausgelesen und angezeigt werden.
+
+**Wichtige Begriffe**
+- API: Schnittstelle zum Austausch von Daten zwischen Programmen.
+- Fetch: Ruft Daten von einer externen Quelle ab.
+- JSON: Format zur Speicherung und Übertragung von Daten.
+- JavaScript: Programmiersprache, die im Browser ausgeführt werden kann.
