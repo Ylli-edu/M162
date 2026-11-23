@@ -1,4 +1,9 @@
-# Modul 162
+# Modul 162: Daten analysieren und modellieren
+## Lernjournal – Tag 2: Datentypen und Zeichencodierung
+
+* **Autor:** Ylli Uka
+* **Datum:** 09.11.2026
+* **Modul:** M162
 
 
 ## 8 Aufgaben zu Unicode
