@@ -1,5 +1,5 @@
 # Modul 162: Daten analysieren und modellieren
-## Lernjournal – Tag 3: Datentypen und Zeichencodierung
+## Lernjournal – Tag 3: Datenstruktur JSON
 
 * **Autor:** Ylli Uka
 * **Datum:** 23.11.2026
